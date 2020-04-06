@@ -163,9 +163,7 @@ export default class Analyzer extends Plugin {
           // argument, so we can just assume this exists
           let argument = path.node.arguments[0];
           if (argument.type !== 'StringLiteral') {
-            throw new Error(
-              'ember-auto-import only supports dynamic import() with a string literal argument.'
-            );
+            return;
           }
           imports.push({
             isDynamic: true,
